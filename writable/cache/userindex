@@ -1,0 +1,244 @@
+a:3:{s:4:"time";i:1697731534;s:3:"ttl";i:60;s:4:"data";s:7880:"<!-- DEBUG-VIEW START 2 APPPATH\Views\user\index.php -->
+<!-- DEBUG-VIEW START 1 APPPATH\Views\layout\default.php -->
+ 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CI 4 PostgreSQL</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+
+  
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+
+  
+<style>
+  footer {
+            background-color: rgba(221, 72, 20, .8);
+            text-align: center;
+        }
+        footer .environment {
+            color: rgba(255, 255, 255, 1);
+            padding: 2rem 1.75rem;
+        }
+        footer .copyrights {
+            background-color: rgba(62, 62, 62, 1);
+            color: rgba(200, 200, 200, 1);
+            padding: .25rem 1.75rem;
+        }
+</style>
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">CI4</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+                
+        
+        <li class="nav-item">
+          <a class="nav-link " href="http://localhost/ci4/cipostgresql/user-index">User</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link " href="http://localhost/ci4/cipostgresql/user-datatable">Datatable</a>
+        </li>
+
+        <li class="nav-item">
+        <a class="nav-link " href="http://localhost/ci4/cipostgresql/staff">Staff</a>
+        </li>
+
+        <li class="nav-item">
+        <a class="nav-link" href="http://localhost/ci4/cipostgresql/mylibrary">MyLibrary</a>
+        </li>
+
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Sample</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="http://localhost/ci4/cipostgresql/mpdf">Mpdf</a></li> 
+            <li><a class="dropdown-item" href="http://localhost/ci4/cipostgresql/spreadsheet">Spreadsheet</a></li> 
+            <li><a class="dropdown-item" href="http://localhost/ci4/cipostgresql/faker">Faker</a></li> 
+            <li><a class="dropdown-item" href="http://localhost/ci4/cipostgresql/cache_staff">Cache User</a></li>
+            <li><a class="dropdown-item" href="http://localhost/ci4/cipostgresql/delete_cache">Delete Cache User</a></li>
+            <li><a class="dropdown-item" href="http://localhost/ci4/cipostgresql/uuid">Uuid</a></li>
+            <li><a class="dropdown-item" href="http://localhost/ci4/cipostgresql/timedate">Time & Date</a></li>
+            <li><a class="dropdown-item" href="http://localhost/ci4/cipostgresql/batch_processing">Batch Processing</a></li>
+            <li><a class="dropdown-item" href="http://localhost/ci4/cipostgresql/nobatch_processing">Not Batch Processing</a></li>
+            <li><a class="dropdown-item" href="http://localhost/ci4/cipostgresql/myservice">My Service</a></li>
+          </ul>
+        </li>
+
+
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Reporting</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="http://localhost/ci4/cipostgresql/bar">Bar</a></li> 
+            <li><a class="dropdown-item" href="http://localhost/ci4/cipostgresql/line">Stacked</a></li> 
+            <li><a class="dropdown-item" href="http://localhost/ci4/cipostgresql/pie">Pie</a></li> 
+          </ul>
+        </li>
+
+        <li class="nav-item">
+        <a class="nav-link" href="http://localhost/ci4/cipostgresql/profile">Welcome : Admin sobbbbbbnn</a>
+        </li>
+
+         
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost/ci4/cipostgresql/logout">Logout</a>
+        </li>
+
+
+                
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid mt-3">
+  
+
+
+<div class="container mt-3">
+<a href="http://localhost/ci4/cipostgresql/user-create" class="btn btn-primary">Create</a>
+
+  <h2>List User</h2>
+                    
+<form action="http://localhost/ci4/cipostgresql/user-index" method='get'>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Search" name='search'>
+  <button class="btn btn-success" type="submit">Search</button>
+</div>
+</form>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+         
+        <th>Name</th>
+        <th>Email</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+            
+      <tr>
+       
+        <td>norizi </td>
+        <td>norizi@gmail.com</td>
+        <td>
+        <div class="btn-group">
+        <a href="http://localhost/ci4/cipostgresql/user-edit/2" class="btn btn-warning">Edit</a>
+        <a href="http://localhost/ci4/cipostgresql/user-delete/2" class="btn btn-danger">Delete</a> 
+        
+        </div>
+
+        <form action="http://localhost/ci4/cipostgresql/user-delete-form" method='post' class="d-inline">  
+        <input type="hidden"  name="id" value="2">
+        <input type="hidden" name="csrf_test_name" value="d99502e7b48778e629363eaba353f4a9">        <button class="btn btn-danger" type="submit">Delete</button> 
+        </form>
+        
+
+        
+
+        </td>
+      </tr>
+              
+      <tr>
+       
+        <td>Admin sobbbbbbnn</td>
+        <td>admin@gmail.com</td>
+        <td>
+        <div class="btn-group">
+        <a href="http://localhost/ci4/cipostgresql/user-edit/1" class="btn btn-warning">Edit</a>
+        <a href="http://localhost/ci4/cipostgresql/user-delete/1" class="btn btn-danger">Delete</a> 
+        
+        </div>
+
+        <form action="http://localhost/ci4/cipostgresql/user-delete-form" method='post' class="d-inline">  
+        <input type="hidden"  name="id" value="1">
+        <input type="hidden" name="csrf_test_name" value="d99502e7b48778e629363eaba353f4a9">        <button class="btn btn-danger" type="submit">Delete</button> 
+        </form>
+        
+
+        
+
+        </td>
+      </tr>
+          </tbody>
+  </table>
+
+   <!-- Pagination -->
+   <!-- DEBUG-VIEW START 1 SYSTEMPATH\Pager\Views\default_full.php -->
+
+<nav aria-label="Page navigation">
+	<ul class="pagination">
+		
+					<li class="active">
+				<a href="http://localhost/ci4/cipostgresql/user-index?page=1">
+					1				</a>
+			</li>
+		
+			</ul>
+</nav>
+
+<!-- DEBUG-VIEW ENDED 1 SYSTEMPATH\Pager\Views\default_full.php -->
+          
+    
+
+      
+
+
+</div>
+
+
+
+</div> 
+
+
+<footer class="mt-5">
+    <div class="environment">
+
+        <p>Page rendered in {elapsed_time} seconds</p>
+
+        <p>Environment: development</p>
+
+    </div>
+
+    <div class="copyrights">
+
+        <p>&copy; 2023 CodeIgniter 4 With PostgreSQL.</p>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
+<script>
+  new DataTable('#example');
+</script>
+
+
+
+<!-- DEBUG-VIEW ENDED 1 APPPATH\Views\layout\default.php -->
+
+<!-- DEBUG-VIEW ENDED 2 APPPATH\Views\user\index.php -->
+";}
