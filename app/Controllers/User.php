@@ -85,10 +85,12 @@ class User extends BaseController
     public function staff()
     {
         $data = [
-            'staffs' => $this->StaffModel->paginate(10),
+            'staffs' => $this->StaffModel->paginate(10,'pager'),
+            //'staffs' => $this->StaffModel->paginate(10),
             'pager' => $this->StaffModel->pager,
+            'numbering'   => order_page_number($this->request->getVar('page_pager'), 10)
         ];
-        //return view('staff/index', $data);
+        return view('staff/index', $data);
        // return view('staff/index', $data, ['cache' => 60]);
     }
 
@@ -427,6 +429,58 @@ class User extends BaseController
 
         
     }
+
+    public function sendemail()
+	{
+		// initialize email setting from emailConfig function.
+		$this->email->initialize($this->emailConfig());
+		// Set sender email and name from .env file
+		$this->email->setFrom(getenv('email_config_SMTPUser'), getenv('email_config_senderName'));
+		// target email or receiver
+		$this->email->setTo('norizi@gmail.com');
+		// Email subject
+		$this->email->setSubject('Reset Password');
+		// Email message
+        //$template = view("email");
+		$this->email->setMessage('Testing the email class.');
+        //$this->email->setMessage($template);
+       // $this->email->setMailType('html'); 
+
+		// make sure email is send
+		if($this->email->send()){
+			//echo 'Success!';
+            session()->setFlashdata('success', 'Send Email Successfully.');
+            return view('sendemail');
+		}else {
+			//echo 'failed';
+            session()->setFlashdata('error', 'Send Email failed.');
+            return view('sendemail');
+		}
+		
+		// return view('welcome_message');
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Set email configuration from .env file
+	 * getenv = get the the value of an environment variable (.env file)
+	 */
+	private function emailConfig()
+	{
+		// Protocol
+		$config['protocol'] = getenv('email_config_protocol');
+		// Host
+		$config['SMTPHost'] = getenv('email_config_SMTPHost');
+		// Port
+		$config['SMTPPort'] = getenv('email_config_SMTPPort');
+		// User
+		$config['SMTPUser'] = getenv('email_config_SMTPUser');
+		// Pass
+		$config['SMTPPass'] = getenv('email_config_SMTPPass');
+		
+		return $config;
+	}
  
 
 

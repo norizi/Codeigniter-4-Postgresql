@@ -103,4 +103,37 @@ class Report extends BaseController
         return view('staff/cache_index', $data);
         */
     }
+
+    public function show_processlist()
+    {
+
+        // Example in a controller or model
+        $db = \Config\Database::connect();
+        //$query = $db->query('SHOW PROCESSLIST');
+        $data['querys'] = $query = $db->query("SELECT pid, now() - pg_stat_activity.query_start AS duration, query, state
+        FROM pg_stat_activity
+        WHERE (now() - pg_stat_activity.query_start) > interval '5 minutes'");
+        //$query = $db->query('select * from pg_stat_activity');
+
+         
+        /*
+        4. Finding Long Processing Time / Stuck Queries
+
+        SELECT pid, now() - pg_stat_activity.query_start AS duration, query, state
+        FROM pg_stat_activity
+        WHERE (now() - pg_stat_activity.query_start) > interval '5 minutes';
+        
+        5. Cancelling Long Running Queries
+
+        SELECT pg_cancel_backend(pid);
+        6. Kill Process ID / Terminate Stuck Queries
+
+        SELECT pg_terminate_backend(pid);
+
+
+
+        */
+        return view('show_processlist', $data);
+    }
+
 }

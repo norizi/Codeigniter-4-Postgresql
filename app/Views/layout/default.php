@@ -93,6 +93,10 @@ $this->renderSection('css')
             <li><a class="dropdown-item" href="<?php echo base_url() ?>timedate">Time & Date</a></li>
             <li><a class="dropdown-item" href="<?php echo base_url() ?>batch_processing">Batch Processing</a></li>
             <li><a class="dropdown-item" href="<?php echo base_url() ?>nobatch_processing">Not Batch Processing</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url() ?>show_processlist">Show Query Processing</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url() ?>traits">Traits</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url() ?>segment">Segment</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url() ?>sendemail">Send Email</a></li>
             <!--
             <li><a class="dropdown-item" href="<?php echo base_url() ?>myservice">My Service</a></li>
             -->

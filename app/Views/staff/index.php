@@ -29,7 +29,7 @@ $this->section('content')
   <table class="table table-bordered">
     <thead>
       <tr>
-         
+        <th>No.</th>
         <th>Name</th>
         <th>Email</th> 
         <th>Age</th> 
@@ -42,7 +42,7 @@ $this->section('content')
     <?php foreach ($staffs as $staff){ ?>
         
       <tr>
-       
+        <td><?= $numbering++; ?>. </td>
         <td><?php echo $staff['name']; ?></td>
         <td><?php echo $staff['email']; ?></td>
         <td><?php echo $staff['age']; ?></td>
@@ -56,13 +56,11 @@ $this->section('content')
   </table>
 
    <!-- Pagination -->
-   <?php echo $pager->links();?>
+   <?php //echo $pager->links();?>
    <?php //echo $pager->simpleLinks() ?>
-   <?php //echo $pager->links('users', 'bootstrap_pagination'); ?>
-    
-    
-
-      
+   <?php //echo $pager->links('staffs', 'bootstrap_pagination'); ?>
+   <?= $pager->links('pager', 'bootstrap_pager') ?>
+  
 
 
 </div>
