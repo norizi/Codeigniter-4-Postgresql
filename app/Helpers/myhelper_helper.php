@@ -43,4 +43,24 @@ if(!function_exists('order_page_number'))
     }
 }
 
+if(!function_exists('emailConfig'))
+{
+    function emailConfig()
+    {
+        // Protocol
+		$config['protocol'] = getenv('email_config_protocol');
+		// Host
+		$config['SMTPHost'] = getenv('email_config_SMTPHost');
+		// Port
+		$config['SMTPPort'] = getenv('email_config_SMTPPort');
+		// User
+		$config['SMTPUser'] = getenv('email_config_SMTPUser');
+		// Pass
+		$config['SMTPPass'] = getenv('email_config_SMTPPass');
+		
+		return $config;
+    }
+}
+
+ 
  

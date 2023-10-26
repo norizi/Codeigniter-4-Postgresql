@@ -7,6 +7,7 @@ use App\Models\UserModel;
 use App\Traits\RandomStringTrait;
 // Import the necessary classes at the top of your controller or script
 use CodeIgniter\HTTP\URI;
+use \Mpdf\Mpdf;
 
 class Login extends Controller
 {
@@ -17,6 +18,13 @@ class Login extends Controller
          
         echo view('login');
     } 
+
+    public function generatePdf() {
+        $mpdf = new MPDF();
+        $mpdf->WriteHTML('<h1>Hello, mPDF!</h1>');
+        $mpdf->Output();
+       //echo "a";
+    }
   
     public function loginAuth()
     {

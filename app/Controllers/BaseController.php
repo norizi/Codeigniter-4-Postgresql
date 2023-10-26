@@ -68,4 +68,6 @@ abstract class BaseController extends Controller
         //send Email
         $this->email = \Config\Services::email();
     }
+
+     
 }

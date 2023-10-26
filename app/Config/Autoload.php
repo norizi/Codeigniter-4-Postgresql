@@ -47,6 +47,11 @@ class Autoload extends AutoloadConfig
     public $psr4 = [
         APP_NAMESPACE => APPPATH, // For custom app namespace
         'Config'      => APPPATH . 'Config',
+        'Myth\Auth'   => APPPATH . 'ThirdParty/myth-auth/src',
+        //'Modules'     => ROOTPATH . 'Modules'
+        'Modules'     => ROOTPATH . 'Modules',
+        'Module'     => ROOTPATH . 'App/Module',
+        'Mpdf'        => APPPATH .'ThirdParty/mpdf/src',
     ];
 
     /**
@@ -66,7 +71,9 @@ class Autoload extends AutoloadConfig
      *
      * @var array<string, string>
      */
-    public $classmap = [];
+    public $classmap = [
+        //'MPDF' => FCPATH . 'App/ThirdParty/mpdf/src/mpdf.php', // Add this line
+    ];
 
     /**
      * -------------------------------------------------------------------

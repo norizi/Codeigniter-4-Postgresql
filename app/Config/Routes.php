@@ -7,6 +7,10 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Login::index');
 
+// app/Config/Routes.php
+
+$routes->get('generatePdf', 'Login::generatePdf');
+
 $routes->get('user-index', 'User::index'); 
 $routes->post('user-index', 'User::index'); 
 $routes->get('user-datatable', 'User::datatable');
@@ -57,3 +61,27 @@ $routes->set404Override(function(){
 */
 
 //$routes->delete('user/delete/(:num)', 'User::delete/$1');
+// include User module 
+if (file_exists(ROOTPATH . 'Modules/Users/Config/Routes.php')){
+    require ROOTPATH . 'Modules/Users/Config/Routes.php';
+}
+
+if (file_exists(ROOTPATH . 'Modules/Admin/Config/Routes.php')){
+    require ROOTPATH . 'Modules/Admin/Config/Routes.php';
+}
+
+if (file_exists(ROOTPATH . 'App/Module/Staff/Config/Routes.php')){
+    require ROOTPATH . 'App/Module/Staff/Config/Routes.php';
+}
+
+if (file_exists(ROOTPATH . 'App/Module/Vendor/Config/Routes.php')){
+    require ROOTPATH . 'App/Module/Vendor/Config/Routes.php';
+}
+
+  /**
+ * --------------------------------------------------------------------
+ * HMVC Routing
+ * --------------------------------------------------------------------
+ */
+
+ 
